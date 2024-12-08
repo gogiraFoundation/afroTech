@@ -1,8 +1,8 @@
-
 from django.urls import path
-from afro_engine.views import project_list, homepage  # Corrected import
+from .views import ProjectTypeDetailView, ProjectDetailView, project_list
 
 urlpatterns = [
     path('projects/', project_list, name='project_list'),
-    path('home/', homepage, name="home"),  # Fixed missing slash
+    path('project/<int:pk>/', ProjectDetailView.as_view(), name='project-detail'),
+    path('projecttype/<int:pk>/', ProjectTypeDetailView.as_view(), name='projecttype-detail'),
 ]
