@@ -35,7 +35,7 @@ def project_list(request):
     ]
     """
     projects = Project.objects.select_related('project_type').all()
-    return render(request, 'project_list.html', {'projects': projects})
+    return render(request, 'projects/project_list.html', {'projects': projects})
 
 
 

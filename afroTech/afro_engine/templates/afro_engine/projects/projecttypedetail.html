@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>{{ object.title }} - AfroTech</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ object.title }}</h1>
+    <p><strong>GitHub Link:</strong> 
+        <a href="{{ object.github_link }}" target="_blank">{{ object.github_link }}</a>
+    </p>
+    {% if object.image %}
+    <img src="{{ object.image.url }}" alt="{{ object.title }}" class="img-fluid mb-3">
+    {% endif %}
+    <h2>Projects Under {{ object.title }}</h2>
+    {% if object.projects.exists %}
+    <ul>
+        {% for project in object.projects.all %}
+        <li>
+            <a href="{{ project.get_absolute_url }}">{{ project.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No projects found for this project type.</p>
+    {% endif %}
+</div>
+{% endblock %}

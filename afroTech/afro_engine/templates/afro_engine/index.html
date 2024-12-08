@@ -1,1 +1,13 @@
-<h1>Hello</h1>
+{% extends "base.html" %}
+
+{% block title %}
+<title>Home - AfroTech</title>
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Welcome to AfroTech!</h1>
+    <p>Your hub for innovative and groundbreaking projects.</p>
+    <a href="{% url 'project_list' %}" class="btn btn-primary">Explore Projects</a>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav-link {
+color: #fff;
+}
+
+.nav-link:hover {
+color: #ffd700;
+}
+
+.card {
+border: none;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+transform: scale(1.02);
+transition: transform 0.3s ease;
+}
