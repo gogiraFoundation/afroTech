@@ -5,9 +5,87 @@
 {% endblock %}
 
 {% block content %}
-<div class="text-center">
-    <h1>Welcome to AfroTech!</h1>
-    <p>Your hub for innovative and groundbreaking projects.</p>
-    <a href="{% url 'project_list' %}" class="btn btn-primary">Explore Projects</a>
+<div class="index_container">
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center text-white" style="background: linear-gradient(to right, #007bff, #6610f2); height: 100vh;">
+        <div class="container text-center">
+            <h1 class="display-2">Welcome to AfroTech!</h1>
+            <h2 class="display-5">Building Smarter Systems. Analyzing Brighter Insights.</h2>
+            <p class="lead">Crafting innovative software and harnessing the power of data to drive impactful solutions.</p>
+            <a href="{% url 'project_list' %}" class="btn btn-light btn-lg me-2">Explore My Projects</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Key Offerings -->
+    <section class="offerings py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Offerings</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-4 text-center shadow-sm h-100">
+                        <div class="mb-3">
+                            <i class="bi bi-code-slash display-4 text-primary"></i>
+                        </div>
+                        <h4>Software Development</h4>
+                        <p>From sleek web apps to robust enterprise systems, delivering scalable, maintainable, and efficient code.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 text-center shadow-sm h-100">
+                        <div class="mb-3">
+                            <i class="bi bi-graph-up display-4 text-success"></i>
+                        </div>
+                        <h4>Data Analytics</h4>
+                        <p>Transforming raw data into actionable insights using statistical models, machine learning, and visualization tools.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 text-center shadow-sm h-100">
+                        <div class="mb-3">
+                            <i class="bi bi-puzzle display-4 text-danger"></i>
+                        </div>
+                        <h4>Integration Expertise</h4>
+                        <p>Bridging the gap between software and analytics for cohesive solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials bg-light py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">What People Say</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <blockquote class="blockquote">
+                            <p>"Their code is clean, scalable, and always delivers beyond expectations."</p>
+                            <footer class="blockquote-footer">TechCorp CEO</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote class="blockquote">
+                            <p>"The analytics solutions transformed our decision-making process completely."</p>
+                            <footer class="blockquote-footer">DataOps Manager</footer>
+                        </blockquote>
+                    </div>
+                    <div class="carousel-item">
+                        <blockquote class="blockquote">
+                            <p>"A seamless integration of systems, saving us time and resources."</p>
+                            <footer class="blockquote-footer">Startup Founder</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
 </div>
 {% endblock %}

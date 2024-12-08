@@ -1,18 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/project_detail.css' %}">
+
 
 {% block title %}
 <title>{{ project.title }} - AfroTech</title>
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container bg-white shadow-sm rounded py-4 px-3">
     <h1>{{ project.title }}</h1>
     <p><strong>Description:</strong> {{ project.description }}</p>
     <p><strong>Type:</strong> <a href="{{ project.project_type.get_absolute_url }}">{{ project.project_type.title }}</a></p>
     <p><strong>GitHub:</strong> 
-        <a href="{{ project.github_link }}" target="_blank">{{ project.github_link }}</a>
+        <a href="{{ project.github_link }}" target="_blank" class="text-primary fw-bold"></a>
     </p>
     <p><strong>Created At:</strong> {{ project.created_at }}</p>
-    <a href="{% url 'project_list' %}" class="btn btn-secondary">Back to Projects</a>
+    <a href="{% url 'project_list' %}" class="btn btn-secondary text-uppercase">Back to Projects</a>
 </div>
 {% endblock %}

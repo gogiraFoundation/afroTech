@@ -24,7 +24,7 @@ class ProjectDetailView(DetailView):
     ]
     """
     model = Project
-    template_name = 'project_detail.html'
+    template_name = 'projects/project_detail.html'
 
 def project_list(request):
     """
@@ -46,3 +46,13 @@ def homepage(request):
            'Directly renders the afro_engine/index.html template without additional context.'
     """
     return render(request, 'afro_engine/index.html')
+
+
+def about_us(request):
+    """
+    'purpose':  renders the about-us page,
+    'logic': [
+            'Directly renders the afro_engine/about_us.html template without additional context'
+    ]
+    """
+    return render(request, 'afro_engine/about_us.html')

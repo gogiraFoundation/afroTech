@@ -1,0 +1,48 @@
+/* General body styling */
+/* General body styling */
+#main_body {
+    margin: 0 auto; /* Center content horizontally */
+    padding: 0 20px; /* Add horizontal padding */
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+    width: 80%; /* Occupies 80% of the viewport width */
+    background-color: #222; /* Dark background */
+    color: #f8f9fa; /* Light text for contrast */
+    min-height: 100vh; /* Full viewport height */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: center; /* Center content vertically */
+    font-size: 18px; /* Comfortable font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+.hero-section {
+  background: linear-gradient(to right, #007bff, #6610f2);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.offerings {
+  padding: 50px 20px;
+}
+
+.offerings .card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.offerings .card:hover {
+  transform: scale(1.05);
+}
+
+.testimonials {
+  background: #f8f9fa;
+  padding: 50px 20px;
+  text-align: center;
+}
+

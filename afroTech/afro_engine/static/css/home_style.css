@@ -1,0 +1,32 @@
+
+.hero-section {
+    color: black;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #007bff, #6610f2);
+    min-height: 100vh;
+    text-align: center;
+}
+
+
+.offerings .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.offerings .card:hover {
+    transform: scale(1.05);
+}
+
+.testimonials {
+    background: #f8f9fa;
+    padding: 50px 20px;
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
+}

@@ -8,7 +8,6 @@ class ProjectForm(forms.ModelForm):
         model = Project
         fields = '__all__'
 
-@admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     form = ProjectForm
     list_display = ('title', 'github_link', 'get_short_description', 'project_type')

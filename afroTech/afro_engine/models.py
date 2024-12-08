@@ -56,7 +56,8 @@ class Project(models.Model):
         ProjectType, 
         on_delete=models.CASCADE, 
         related_name="projects", 
-        help_text="Select the project type."
+        help_text="Select the project type.",
+        default=1
     )
     github_link = models.URLField(help_text="Link to the project's GitHub repository.")
     created_at = models.DateTimeField(auto_now_add=True)
