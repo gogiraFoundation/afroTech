@@ -9,13 +9,56 @@
 
 {% block content %}
 <div class="container bg-white shadow-sm rounded py-4 px-3">
-    <h1>{{ project.title }}</h1>
-    <p><strong>Description:</strong> {{ project.description }}</p>
-    <p><strong>Type:</strong> <a href="{{ project.project_type.get_absolute_url }}">{{ project.project_type.title }}</a></p>
-    <p><strong>GitHub:</strong> 
-        <a href="{{ project.github_link }}" target="_blank" class="text-primary fw-bold"></a>
-    </p>
-    <p><strong>Created At:</strong> {{ project.created_at }}</p>
-    <a href="{% url 'project_list' %}" class="btn btn-secondary text-uppercase">Back to Projects</a>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="mb-4">{{ project.title }}</h1>
+            <!-- Project Image -->
+            {% if project.image %}
+                <img src="{{ project.image.url }}" class="img-fluid rounded mb-4" alt="{{ project.title }}">
+            {% else %}
+                <p class="text-muted">No image available for this project.</p>
+            {% endif %}
+
+            <!-- Project Type -->
+            <p><strong>Type:</strong> <a href="{{ project.project_type.get_absolute_url }}">{{ project.project_type.title }}</a></p>
+
+            <!-- Project Description -->
+            <p class="lead">{{ project.description }}</p>
+
+            <!-- Project Features -->
+            <h4>Project Features</h4>
+            {% if project.features %}
+                <ul>
+                    {% for feature in project.features %}
+                        <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No features available for this project.</p>
+            {% endif %}
+
+            <!-- Technologies Used -->
+            <h4>Technologies Used</h4>
+            {% if project.technologies %}
+                <ul>
+                    {% for tech in project.technologies %}
+                    <li>{{ tech }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No technologies listed for this project.</p>
+            {% endif %}
+
+            <!-- Project Links -->
+            <h4>Project Links</h4>
+            <p><strong>GitHub:</strong> 
+            <a href="{{ project.github_link }}" target="_blank" class="text-primary fw-bold btn btn-secondary">View on GitHub</a>
+            </p>
+
+            <!-- Back to Project List Button -->
+            <a href="{% url 'project_list' %}" class="btn btn-secondary text-uppercase mt-4">Back to Projects</a>
+        </div>
+    </div>
 </div>
+    
 {% endblock %}

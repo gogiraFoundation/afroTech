@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
         <link rel="stylesheet" href="{% static 'css/home_style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/projectlist_style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/project_detail_style.css' %}">
     </head>
 
     <body>
@@ -20,7 +22,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <nav class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto nav">
                         <li class="nav-item"><a class="nav-link text-white" href="{% url 'home' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link text-white" href="{% url 'project_list' %}">Projects</a></li>
                         <li class="nav-item"><a class="nav-link text-black" href="about">About Us</a></li>
@@ -31,7 +33,7 @@
         </header>
 
         <!-- Main Content Section -->
-        <main class="container py-4">
+        <main id=main_body class="container py-4">
             {% block content %}
             <div class="row">
                 {% if projects %}

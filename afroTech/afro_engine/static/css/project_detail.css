@@ -1,0 +1,49 @@
+/* project_detail.css */
+
+/* Card shadow effect */
+.container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1, h4 {
+    color: #333;
+}
+
+/* Buttons */
+.btn {
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+a {
+    color: whitesmoke;
+
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #ff996e;
+    padding: 5px 10px;
+    font-size: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #ff996e;
+    color: #6c757d;
+    box-shadow: #6c757d;
+}
+
+/* List items styling */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 5px 0;
+}
+
+ul li:before {
+    content: "• ";
+    color: #007bff; /* Blue color for the bullet points */
+}

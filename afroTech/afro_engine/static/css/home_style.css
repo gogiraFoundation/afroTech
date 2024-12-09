@@ -5,10 +5,43 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #007bff, #6610f2);
+    background: linear-gradient(to right, #5baaff, #6610f2);
     min-height: 100vh;
     text-align: center;
 }
+
+
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero-section h2 {
+    font-weight: 400;
+}
+
+.display_text {
+    padding: 4px;
+    margin-top: -5px;
+    position: relative;
+    top: -12rem;
+}
+
+.display_small {
+    padding: 4px;
+    margin-top: -5px;
+    position: relative;
+    top: -12rem;
+    font-size: 16px;
+    color: whitesmoke;
+
+}
+
+
+.hero-section p {
+    font-size: 18px;
+}
+
 
 
 .offerings .card {
@@ -30,3 +63,27 @@
     transform: translateY(-10px);
     transition: 0.3s;
 }
+
+
+
+
+
+  
+  .offerings {
+    padding: 50px 20px;
+  }
+  
+  .offerings .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .offerings .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .testimonials {
+    background: #f8f9fa;
+    padding: 50px 20px;
+    text-align: center;
+  }

@@ -59,6 +59,8 @@ class Project(models.Model):
         help_text="Select the project type.",
         default=1
     )
+    features = models.TextField(null=True, blank=True)
+    technologies = models.CharField(max_length=255, null=True, blank=True)
     github_link = models.URLField(help_text="Link to the project's GitHub repository.")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

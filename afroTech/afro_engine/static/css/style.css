@@ -1,22 +1,23 @@
-/* General Styling */
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Light gray background for contrast */
+    background-color: #f8f9fa;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* Header Styling */
 header {
     background-color: #343a40; /* Dark background for header */
     color: white;
-    padding: 15px 0;
+    padding: 10px 20px;
 }
 
 header .container {
@@ -42,7 +43,7 @@ header nav .nav-item {
 }
 
 header nav .nav-link {
-    color: white;
+    color: #ffffff; /* White color for links */
     text-decoration: none;
     font-weight: bold;
 }
@@ -51,101 +52,17 @@ header nav .nav-link:hover {
     color: #ffc107; /* Gold hover color */
 }
 
-/* Card Styling */
-.card {
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    background-color: white;
+
+
+header .container {
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+.header > div {
+    color: whitesmoke;
 
-.card-title {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.card-text {
-    font-size: 14px;
-    color: #6c757d;
-}
-
-/* Pagination Styling */
-.pagination .page-item .page-link {
-    color: #007bff; /* Bootstrap primary color */
-    border-radius: 50%;
-}
-
-.pagination .page-item.active .page-link {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: white;
-}
-
-/* Footer Styling */
-footer {
-    background-color: #343a40;
-    color: white;
-    padding: 15px 0;
-    text-align: center;
-    position: relative; /* Allows footer to stay at the bottom only when content is shorter than viewport */
-    bottom: 0;
-    width: 100%;
 }
 
 
-/* Footer styling */
-footer {
-    margin-top: auto; /* Pushes the footer to the bottom when the content is less than the viewport height */
-    width: 100%; /* Ensures the footer spans the full width */
-    position: sticky; /* Sticks to the bottom of the page */
-    bottom: 0;
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
 
-
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.text-white {
-    color:v black;
-}
-
-.bg-dark {
-    background-color: #343a40 !important;
-}
-
-.py-3 {
-    padding: 1rem 0;
-}
-
-.mb-4 {
-    margin-bottom: 1.5rem;
-}
-
-
-/* Aboust section */
-.about-section {
-    background-color: #f8f9fa;
-    padding: 50px 20px;
-}
-
-.about-section .card {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.mission {
-    padding: 50px 20px;
-    background: linear-gradient(to right, #6f42c1, #007bff);
-    color: white;
-    text-align: center;
-}

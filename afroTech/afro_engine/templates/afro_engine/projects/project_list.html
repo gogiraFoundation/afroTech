@@ -5,25 +5,55 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Our Projects</h1>
-    <div class="row">
+<div class="container py-5">
+    <h1 class="text-center mb-5">Projects</h1>
+    <div class="row g-4">
         {% if projects %}
             {% for project in projects %}
             <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ project.title }}</h5>
-                        <p class="card-text">{{ project.description|truncatewords:15 }}</p>
-                        <a href="{{ project.get_absolute_url }}" class="btn btn-primary">View Details</a>
-                        <a href="{{ project.github_link }}" target="_blank" class="btn btn-secondary">GitHub</a>
-                    </div>
+                <div class="card shadow-sm h-100">
+                    {% if project.image %}
+                        <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                    {% else %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <p class="card-text">{{ project.description|truncatewords:15 }}</p>
+                            <a href="{{ project.get_absolute_url }}" class="btn btn-primary">View Details</a>
+                            <a href="{{ project.github_link }}" target="_blank" class="btn btn-secondary">GitHub</a>
+                        </div>
+                    {% endif %}
+
                 </div>
             </div>
             {% endfor %}
         {% else %}
-            <p>No projects available at the moment.</p>
+            <p class="text-center">No projects available at the moment.</p>
         {% endif %}
     </div>
+    {% block pagination %}
+    {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ request.path }}?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+                <li class="page-item disabled">
+                    <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                </li>
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ request.path }}?page={{ page_obj.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+    {% endblock %}
 </div>
 {% endblock %}
