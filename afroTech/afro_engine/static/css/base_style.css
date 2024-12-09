@@ -1,4 +1,13 @@
-/* Base styling */
+/* Base styling for main content area */
+
+
+/* Additional body styling for larger screens */
+@media (min-width: 768px) {
+    #main_body {
+        width: 70%; /* On larger screens, make the content slightly narrower */
+        padding: 0 40px; /* Increase padding for better readability */
+    }
+}
 
 #main_body {
     margin: 0 auto; /* Center content horizontally */
@@ -10,7 +19,13 @@
     display: flex; /* Flexbox layout */
     flex-direction: column; /* Arrange children vertically */
     justify-content: center; /* Center content vertically */
-    font-size: 18px; /* Comfortable font size */
+    font-size: 1rem; /* Comfortable font size in rem (better scalability) */
     box-shadow: 0 1px 4px rgb(239, 239, 239); /* Subtle shadow for depth */
-    background-image: url('media\bg.jpg');
+    
+}
+
+
+/* Add some text and section padding */
+h1, h2, h3, p {
+    margin-bottom: 20px;
 }

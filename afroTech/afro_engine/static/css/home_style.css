@@ -1,14 +1,41 @@
-
 .hero-section {
     color: black;
     padding: 100px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #5baaff, #6610f2);
+    background-image: url('/static/images/bg.jpg');
+    background-size: 300px 300px; 
+    background-position: center; 
+    background-repeat: no-repeat; /* Ensure no repeating */
+    background-attachment: fixed; /* Fixed background for parallax effect */
+    height: 100vh;
     min-height: 100vh;
     text-align: center;
+
+    /* Animation properties */
+    animation: background-float 50s ease-in-out infinite;
 }
+
+/* Keyframes for background animation */
+@keyframes background-float {
+    0% {
+        background-position: center;
+    }
+    25% {
+        background-position: center top;
+    }
+    50% {
+        background-position: center right;
+    }
+    75% {
+        background-position: center left;
+    }
+    100% {
+        background-position: center;
+    }
+}
+
 
 
 .hero-section h1 {
@@ -25,6 +52,7 @@
     margin-top: -5px;
     position: relative;
     top: -12rem;
+    color: rgba(17, 17, 17, 0.573);
 }
 
 .display_small {
@@ -33,7 +61,7 @@
     position: relative;
     top: -12rem;
     font-size: 16px;
-    color: whitesmoke;
+    color: rgba(17, 17, 17, 0.573);
 
 }
 
@@ -42,6 +70,13 @@
     font-size: 18px;
 }
 
+
+/* Text Styling for Enhanced Contrast */
+.hero-section h1, 
+.hero-section h2, 
+.hero-section p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add subtle shadow for better readability */
+}
 
 
 .offerings .card {
