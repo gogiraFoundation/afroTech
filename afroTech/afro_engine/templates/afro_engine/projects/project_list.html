@@ -22,7 +22,6 @@
                             <a href="{{ project.github_link }}" target="_blank" class="btn btn-secondary">GitHub</a>
                         </div>
                     {% endif %}
-
                 </div>
             </div>
             {% endfor %}
@@ -30,6 +29,7 @@
             <p class="text-center">No projects available at the moment.</p>
         {% endif %}
     </div>
+    
     {% block pagination %}
     {% if is_paginated %}
         <nav aria-label="Page navigation">

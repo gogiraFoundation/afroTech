@@ -1,0 +1,55 @@
+/* contact styling */
+.contact_wrap form div {
+    margin-bottom: 15px;
+}
+
+.contact_wrap label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact_wrap input,
+.contact_wrap textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact_wrap button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.contact_wrap button:hover {
+    background-color: #004085;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 0.9rem;
+}
+
+.messages p {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.messages .success {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.messages .error {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}

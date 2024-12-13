@@ -1,124 +1,139 @@
+/* Indedx Styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    color: #212529; /* Darker text for readability */
+}
+
+/* Hero Section */
 .hero-section {
-    color: black;
-    padding: 100px 20px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    background-image: url('/static/images/bg.jpg');
-    background-size: 300px 300px; 
-    background-position: center; 
-    background-repeat: no-repeat; /* Ensure no repeating */
-    background-attachment: fixed; /* Fixed background for parallax effect */
-    height: 100vh;
-    min-height: 100vh;
+    align-items: center;
     text-align: center;
-
-    /* Animation properties */
-    animation: background-float 50s ease-in-out infinite;
+    position: relative;
+    height: 100vh;
+    padding: 20px;
+    color: #000;
+    overflow: hidden;
 }
-
-/* Keyframes for background animation */
-@keyframes background-float {
-    0% {
-        background-position: center;
-    }
-    25% {
-        background-position: center top;
-    }
-    50% {
-        background-position: center right;
-    }
-    75% {
-        background-position: center left;
-    }
-    100% {
-        background-position: center;
-    }
-}
-
-
 
 .hero-section h1 {
+    position: relative;
+    color: #000;
+    z-index: 4;
     font-size: 48px;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(195, 182, 168, 0.971);
 }
 
-.hero-section h2 {
-    font-weight: 400;
+.hero-background {
+    position: absolute;
+    top: 5.8em;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-image: 
+        url('/static/images/bg.jpg'), 
+        url('/static/images/bg2.jpg'), 
+        url('/static/images/bg3.jpg');
+    background-size: 5px 100%, 5px 100%, 5px 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: 30% center, 50% center, 70% center;
+    animation: animate-strips 4s ease-in-out infinite;
+    z-index: 1;
+    filter: blur(2px);
 }
 
-.display_text {
-    padding: 4px;
-    margin-top: -5px;
-    position: relative;
-    top: -12rem;
-    color: rgba(17, 17, 17, 0.573);
+/* Keyframes for strip animation */
+@keyframes animate-strips {
+    0% {
+        background-position: 25% center, 50% center, 75% center;
+        opacity: 0.7;
+    }
+    50% {
+        background-position: 20% center, 55% center, 80% center;
+        opacity: 1;
+    }
+    100% {
+        background-position: 30% center, 50% center, 70% center;
+        opacity: 0.7;
+    }
 }
 
-.display_small {
-    padding: 4px;
-    margin-top: -5px;
-    position: relative;
-    top: -12rem;
-    font-size: 16px;
-    color: rgba(17, 17, 17, 0.573);
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 36px;
+    }
 
+    .hero-background {
+        background-size: 3px 100%, 3px 100%, 3px 100%;
+    }
 }
 
-
-.hero-section p {
-    font-size: 18px;
-}
-
-
-/* Text Styling for Enhanced Contrast */
-.hero-section h1, 
-.hero-section h2, 
-.hero-section p {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add subtle shadow for better readability */
-}
-
-
+/* Offerings Section */
 .offerings .card {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .offerings .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+.offerings i {
+    font-size: 3rem;
+    color: #007bff;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Testimonials Section */
 .testimonials {
-    background: #f8f9fa;
-    padding: 50px 20px;
+    background-color: #f8f9fa;
+    padding: 5rem 0;
 }
 
-
-.card:hover {
-    transform: translateY(-10px);
-    transition: 0.3s;
-}
-
-
-
-
-
-  
-  .offerings {
-    padding: 50px 20px;
-  }
-  
-  .offerings .card {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-  }
-  
-  .offerings .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .testimonials {
-    background: #f8f9fa;
-    padding: 50px 20px;
+.carousel-inner .carousel-item {
     text-align: center;
-  }
+}
+
+.carousel-indicators button {
+    background-color: #007bff;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #007bff;
+}
+
+/* Text and layout adjustments for better readability */
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Hero Section styling for small devices */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 10px;
+    }
+
+    .hero-background {
+        background-size: 3px 100%, 3px 100%, 3px 100%;
+    }
+}

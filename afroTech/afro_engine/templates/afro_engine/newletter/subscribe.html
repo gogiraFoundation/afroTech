@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Subscribe to Our Newsletter</title>
+{% endblock %}
+
+{% block content %}
+<div class="newsletter-container">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Stay updated with the latest news and updates from AfroTech!</p>
+
+    <!-- Newsletter Subscription Form -->
+    <form method="post" action="{% url 'newsletter_subscribe' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="email">Enter your email address:</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Your email address" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+
+    <!-- Display Messages -->
+    {% if messages %}
+        <div class="messages mt-3">
+            {% for message in messages %}
+                <p class="alert {{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

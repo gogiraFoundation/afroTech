@@ -1,49 +1,89 @@
-/* project_detail.css */
 
-/* Card shadow effect */
+
+/* Project Detail Styling */
 .container {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 960px;
+    margin-top: 50px;
 }
 
-/* Headings */
-h1, h4 {
-    color: #333;
+h1 {
+    font-size: 2.5rem;
+    color: #343a40;
 }
 
-/* Buttons */
-.btn {
-    text-transform: uppercase;
-    border-radius: 3px;
+h4 {
+    font-size: 1.5rem;
+    color: #495057;
+    margin-top: 25px;
 }
-a {
-    color: whitesmoke;
 
+p.lead {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 1.1rem;
+    color: #495057;
+}
+
+.text-muted {
+    color: #868e96;
+}
+
+.text-primary {
+    color: #007bff !important;
 }
 
 .btn-secondary {
     background-color: #6c757d;
-    color: #ff996e;
-    padding: 5px 10px;
-    font-size: 10px;
+    border-color: #6c757d;
 }
 
 .btn-secondary:hover {
-    background-color: #ff996e;
-    color: #6c757d;
-    box-shadow: #6c757d;
+    background-color: #5a6268;
+    border-color: #545b62;
 }
 
-/* List items styling */
-ul {
-    list-style-type: none;
-    padding-left: 0;
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-ul li {
-    padding: 5px 0;
+.mb-4 {
+    margin-bottom: 1.5rem !important;
 }
 
-ul li:before {
-    content: "• ";
-    color: #007bff; /* Blue color for the bullet points */
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-sm {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.rounded {
+    border-radius: 8px;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
 }

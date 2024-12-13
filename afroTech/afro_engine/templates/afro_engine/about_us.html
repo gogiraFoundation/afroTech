@@ -18,17 +18,37 @@
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="card p-4">
-                <h4>Software Development Expertise</h4>
-                <p>Proficient in Python, WebFrameworks such as Django, and cloud technologies (AWS, Azure). Built 10+ enterprise-grade applications used by thousands daily.</p>
+                    <h4>Software Development Expertise</h4>
+                    <p>Proficient in Python, Web Frameworks such as Django, and cloud technologies (AWS, Azure). Built 10+ enterprise-grade applications used by thousands daily.</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card p-4">
-                <h4>Data Analytics Acumen</h4>
-                <p>Experienced in data wrangling, visualization, and predictive modeling. Skilled in tools like Tableau, Power BI, and Python libraries.</p>
+                    <h4>Data Analytics Acumen</h4>
+                    <p>Experienced in data wrangling, visualization, and predictive modeling. Skilled in tools like Tableau, Power BI, and Python libraries.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- About Us Content Section -->
+    <section class="about-us-content">
+        {% if error %}
+            <div class="alert alert-danger">
+                <p>{{ error }}</p>
+            </div>
+        {% else %}
+            <div class="about-content">
+                <p>{{ about_us.content }}</p>
+            </div>
+        {% endif %}
+    </section>
+
+    <!-- Newsletter Section -->
+    <aside class="newsletter-section">
+        {% block content %}
+            {% include 'newsletter_subscribe' %}
+        {% endblock %}
+    </aside>
 </div>
 {% endblock %}
