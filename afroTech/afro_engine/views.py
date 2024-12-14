@@ -104,7 +104,7 @@ def newsletter_subscribe(request):
                 messages.success(request, "Thank you for subscribing to our newsletter!")
         else:
             messages.error(request, "Please provide a valid email address.")
-        return redirect('newsletter_subscribe')
+        return redirect('newsletter/subscribe.html')
     return render(request, 'newsletter/subscribe.html')
 
 
@@ -120,7 +120,7 @@ def contact_view(request):
                 recipient_list=['admin@afrotech.com'],
             )
             messages.success(request, 'Your message has been sent!')
-            return redirect('contact')
+            return redirect('afro_engine:contact')
         except BadHeaderError:
             messages.error(request, 'Invalid header found.')
             logger.error("Invalid header found while sending email.")

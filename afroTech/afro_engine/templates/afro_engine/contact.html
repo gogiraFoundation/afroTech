@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/contact_style.css' %}">
+
 
 {% block title %}
 <title>Contact - AfroTech</title>
@@ -12,7 +15,7 @@
             <p>We'd love to hear from you! Please fill out the form below to get in touch with us.</p>
 
             <!-- Start of Django Form -->
-            <form method="post" action="{% url 'contact_submit' %}">
+            <form method="post" action="{% url 'afro_engine:contact' %}">
                 {% csrf_token %}
                 
                 {% for field in form %}

@@ -9,6 +9,7 @@ from .views import (
     newsletter_subscribe
 )
 
+
 app_name = 'afro_engine'
 
 urlpatterns = [
@@ -18,5 +19,5 @@ urlpatterns = [
     path('projects/', ProjectListView.as_view(), name='project_list'),  # Corrected here
     path('project/<int:pk>/', ProjectDetailView.as_view(), name='project-detail'),
     path('projecttype/<int:pk>/', ProjectTypeDetailView.as_view(), name='projecttype-detail'),
-    path('newsletter/subscribe', newsletter_subscribe, name='newsletter_subscribe'),
+    path('newsletter/subscribe/', newsletter_subscribe, name='newsletter_subscribe'),
 ]

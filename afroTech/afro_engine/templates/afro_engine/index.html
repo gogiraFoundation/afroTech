@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home_style.css' %}">
+{% endblock %}
 
 {% block title %}
 <title>Home - AfroTech</title>
@@ -7,14 +12,28 @@
 {% block content %}
 <div class="index_container">
     <!-- Hero Section -->
-    <section class="hero-section d-flex align-items-center text-white">
-        <div class="container text-center">
+    <section class="hero-section d-flex align-items-center">
+        <div class="index-wrap text-center">
             <div class="hero-background"></div>
             <h1 class="display-2 display_text">AfroTech!</h1>
             <h2 class="display-5 display_small">Building Smarter Systems. Analyzing Brighter Insights.</h2>
+            <div class="hero-img-banner row d-flex align-items-center">
+                <div class="gridone grid">
+                    <div>image</div>
+                    <div><h3>sometext</h3></div>
+                </div>
+                <div class="gridtwo grid">
+                    <div>image</div>
+                    <div><h3>sometext</h3></div>
+                </div>
+                <div class="gridthree grid">
+                    <div>image</div>
+                    <div><h3>sometext</h3></div>
+                </div>
+            </div>
             <p class="lead">Crafting innovative software and harnessing the power of data to drive impactful solutions.</p>
-            <a href="{% url 'project_list' %}" class="btn btn-dark btn-sm-2" aria-label="Explore Projects">Explore My Projects</a>
-            <a href="#contact" class="btn btn-outline-dark btn-sm" aria-label="Contact Us">Get in Touch</a>
+            <a href="{% url 'afro_engine:project_list' %}" class="btn btn-outline-dark btn-sm" aria-label="View Projects">View Projects</a>
+            <a href="{% url 'afro_engine:contact' %}" class="btn btn-outline-dark btn-sm" aria-label="Contact Us">Get in Touch</a>
         </div>
     </section>
 

@@ -44,16 +44,61 @@ header h1 {
     font-weight: bold;
 }
 
+/* Ensure proper visibility of the navbar-toggler-icon */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Ensure proper display of the nav menu */
+.navbar-collapse {
+    flex-grow: 1;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link {
+    padding: 10px 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #ffffff;
+}
+
+/* Hover effect */
+.nav-link:hover {
+    color: #ffc107;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: none;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+}
+
+
 header nav .nav {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-direction: row;
+}
+
+
+#nav-menu.hidden {
+    display: none;
 }
 
 header nav .nav-item {
     margin-left: 20px;
 }
+
 
 header nav .nav-link {
     color: #ffffff; /* White color for links */
@@ -66,6 +111,7 @@ header nav .nav-link:hover {
     color: #ffc107; /* Gold hover color */
     background-color: #ffc107; /* Added hover background color */
 }
+
 
 /* Responsive Layout for Small Screens */
 @media (max-width: 768px) {
@@ -106,6 +152,11 @@ header nav .nav-link:hover {
     box-shadow: 0 1px 4px rgb(239, 239, 239); /* Subtle shadow for depth */
     background-color: #f8f9fa; /* Slightly light background */
 }
+
+
+
+
+
 
 /* Additional body styling for larger screens */
 @media (min-width: 768px) {
@@ -172,5 +223,15 @@ footer p {
 
     header nav .nav-link {
         font-size: 1.1rem; /* Slightly larger text for navigation links */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block; /* Make sure the toggle button is visible on small screens */
+    }
+
+    header nav .navbar-collapse {
+        display: block; /* Make sure the collapse part appears */
     }
 }

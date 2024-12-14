@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/about_style.css' %}">
+{% endblock %}
 
 {% block title %}
 <title>About Us - AfroTech</title>
@@ -9,7 +14,9 @@
     <!-- Mission Section -->
     <section class="mission">
         <h1>About Me</h1>
-        <p class="lead">"I thrive at the intersection of software development and data analytics. My goal is to create impactful solutions that streamline processes, solve challenges, and make data work for you."</p>
+        <p class="lead">
+            "I thrive at the intersection of software development and data analytics. My goal is to create impactful solutions that streamline processes, solve challenges, and make data work for you."
+        </p>
     </section>
 
     <!-- Professional Background -->
@@ -19,13 +26,25 @@
             <div class="col-md-6">
                 <div class="card p-4">
                     <h4>Software Development Expertise</h4>
-                    <p>Proficient in Python, Web Frameworks such as Django, and cloud technologies (AWS, Azure). Built 10+ enterprise-grade applications used by thousands daily.</p>
+                    <p>
+                        Proficient in Python, Web Frameworks such as Django, and cloud technologies (AWS, Azure). Built 10+ enterprise-grade applications used by thousands daily.
+                    </p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card p-4">
                     <h4>Data Analytics Acumen</h4>
-                    <p>Experienced in data wrangling, visualization, and predictive modeling. Skilled in tools like Tableau, Power BI, and Python libraries.</p>
+                    <p>
+                        Experienced in data wrangling, visualization, and predictive modeling. Skilled in tools like Tableau, Power BI, and Python libraries.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-4">
+                    <h4>Project Management</h4>
+                    <p>
+                        Proficient in Python, Web Frameworks such as Django, and cloud technologies (AWS, Azure). Built 10+ enterprise-grade applications used by thousands daily.
+                    </p>
                 </div>
             </div>
         </div>
@@ -37,18 +56,24 @@
             <div class="alert alert-danger">
                 <p>{{ error }}</p>
             </div>
-        {% else %}
+        {% elif about_us.content %}
             <div class="about-content">
                 <p>{{ about_us.content }}</p>
+            </div>
+        {% else %}
+            <div class="alert alert-warning">
+                <p>No additional content available at the moment.</p>
             </div>
         {% endif %}
     </section>
 
     <!-- Newsletter Section -->
-    <aside class="newsletter-section">
-        {% block content %}
-            {% include 'newsletter_subscribe' %}
-        {% endblock %}
-    </aside>
+    <section class="newsletter_section">
+        <div class="newsletter_wrap">
+            {% block newsletter %}
+            {% include 'newsletter/subscribe.html' %}
+            {% endblock %}
+        </div>
+    </section>
 </div>
 {% endblock %}

@@ -43,7 +43,6 @@ class ProjectType(models.Model):
     def __str__(self):
         return self.get_status_display()
 
-
 class Project(models.Model):
     """
     Represents an individual project with metadata and related information.
@@ -55,11 +54,12 @@ class Project(models.Model):
     )
     slug = models.SlugField(
         unique=True,
+        blank=True,  # Allow blank, because it will be auto-generated
         help_text="Unique slug for SEO-friendly URLs."
     )
     description = models.TextField(help_text="Enter a detailed project description.")
     project_type = models.ForeignKey(
-        ProjectType,
+        'ProjectType',  # Ensure 'ProjectType' is defined elsewhere
         on_delete=models.CASCADE,
         related_name="projects",
         help_text="Select the project type."
@@ -83,13 +83,15 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         return reverse('project-detail', args=[str(self.slug)])
-    
+
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)  # Automatically create a slug from the title
+        # Automatically generate a slug from the title if it's empty
+        if not self.slug:
+            self.slug = slugify(self.title)
         # Ensure slug is unique by appending a number if needed
         while Project.objects.filter(slug=self.slug).exclude(pk=self.pk).exists():
             self.slug = f"{slugify(self.title)}-{Project.objects.filter(slug=self.slug).count() + 1}"
-    
+
         super().save(*args, **kwargs)
 
     def clean(self):
@@ -112,7 +114,6 @@ class Project(models.Model):
         except Exception as e:
             logger.error(f"Unexpected error cleaning Project: {e}")
             raise
-
 
     def __str__(self):
         return f"{self.title} ({self.project_type.status})"
