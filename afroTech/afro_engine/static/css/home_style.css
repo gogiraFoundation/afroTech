@@ -168,7 +168,27 @@ body {
         flex-direction: row;
         width: 30%;
         max-height: 750px;
-        height: 650px;
+        margin: 0 auto;
+        padding: 10px;
+        top: 25rem;
+        overflow: hidden;
+    }
+
+    .offerings-col {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .testimonials {
+        width: 30%;
+        max-height: 150px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .test-container {
+        width: 100%;
+        text-align: center;
         margin: 0 auto;
     }
 
@@ -215,6 +235,7 @@ body {
 }
 
 .offerings .card {
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -228,17 +249,35 @@ body {
     color: var(--highlight-color);
 }
 
-/* Container Styling */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
 /* Testimonials Section */
 .testimonials {
-    background-color: var(--light-bg);
-    padding: 5rem 0;
+    width: 70%;
+    max-width: 75%;
+    margin: 20px auto;
+    position: absolute;
+    bottom: 10rem;
+}
+
+
+.test-container {
+    height: 300px;
+    font-family: 'Raleway';
+    border-radius: 1px 1px 3px 4px;
+    box-shadow: 0.5px 0.5px 1px 2px #fd5c64c0;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.test-container h2 {
+    padding: 5px;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 0 auto;
+    
+}
+
+#testimonialCarousel {
+    margin: 0 auto;
 }
 
 
@@ -285,9 +324,11 @@ h2 {
 }
 
 .testimonials {
-    margin: 20px auto;
+    margin: 0 auto;
     position: absolute;
-    top: 70rem;
+    top: 60rem;
+    background-color: #feb47b;
+
 }
 
 

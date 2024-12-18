@@ -173,7 +173,7 @@ header nav .nav-link:hover {
 /* Additional body styling for smaller screens */
 @media (max-width: 767px) {
     #main_body {
-        width: 90%; /* Make content more fluid on smaller screens */
+        width: 70%; /* Make content more fluid on smaller screens */
         padding: 0 15px; /* Reduce padding for smaller devices */
     }
 
@@ -210,6 +210,7 @@ footer {
     text-align: center;
     padding: 1rem;
     position: fixed;
+    margin-top: 5rem;
     bottom: 0;
     width: 100%;
 }
