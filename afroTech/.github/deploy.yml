@@ -1,0 +1,41 @@
+name: Deploy Django Project
+
+on:
+  push:
+    branches:
+      - main  # Replace with your default branch name, if not 'main'
+
+jobs:
+  deploy:
+    name: Deploy Django App
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'  # Use the version of Python you're working with
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 4: Run Django migrations
+      - name: Apply migrations
+        env:
+          DJANGO_SETTINGS_MODULE: afrotech.settings.production
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python manage.py migrate
+
+      # Step 5: Collect static files
+      - name: Collect static files
+        env:
+          DJANGO_SETTINGS_MODULE: afrotech.settings.production
+        run: python manage.py collectstatic --noinput
