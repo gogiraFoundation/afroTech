@@ -1,5 +1,5 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/newsletter_style.css' %}">
+
 {% block content %}
 <div class="newsletter-container">
     <h2>Subscribe to Our Newsletter</h2>
@@ -9,7 +9,7 @@
     <form method="post" action="{% url 'afro_engine:newsletter_subscribe' %}">
         {% csrf_token %}
         <div class="form-group">
-            <label for="email">Enter your email address:</label>
+            <label class="emailid" for="email">Enter your email address:</label>
             <input type="email" id="email" name="email" class="form-control" placeholder="Your email address" required>
         </div>
         <button type="submit" class="btn btn-primary">Subscribe</button>

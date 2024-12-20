@@ -1,15 +1,27 @@
 /* General body styling */
+
 * {
     box-sizing: border-box;
 }
 
+:root {
+    --primary-font: 'Arial', sans-serif;
+    --primary-color: #212529;
+    --secondary-color: #2b2b2b;
+    --highlight-color: #007bff;
+    --light-bg: #f8f9fa;
+    --hover-shadow: rgba(0, 0, 0, 0.2);
+    --font-medium: 500;
+    --font-bold: 600;
+    --font-extra-bold: 750;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--primary-font);
     margin: 0;
-    padding: 10px; /* Added padding to body */
-    background-color: #f8f9fa;
-    text-align: left;
-    color: #212529; /* Darker text for better readability */
+    padding: 0;
+    color: var(--primary-color);
+    background-color: var(--light-bg);
     font-size: 1rem; /* Default font size */
 }
 
@@ -23,8 +35,8 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #343a40; /* Dark background for header */
-    color: white;
+    background-color: var(--primary-color); /* Dark background for header */
+    color: var(--light-bg);
     padding: 10px 20px;
 }
 
@@ -98,6 +110,7 @@ header nav .nav {
 header nav .nav-item {
     margin-left: 20px;
 }
+/* Root Variables for Consistency */
 
 
 header nav .nav-link {
@@ -205,18 +218,17 @@ h1, h2, h3, p {
 
 /* Footer Styling */
 footer {
-    background-color: #343a40;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--light-bg);
     text-align: center;
     padding: 1rem;
-    position: fixed;
-    margin-top: 5rem;
-    bottom: 0;
-    width: 100%;
+    border-top: 4px solid var(--highlight-color);
 }
+
 
 footer p {
     margin: 0;
+    font-size: 0.9rem;
 }
 
 /* Adjustments for better readability on large screens */

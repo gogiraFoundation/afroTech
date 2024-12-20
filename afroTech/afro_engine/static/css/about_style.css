@@ -5,9 +5,11 @@
 }
 
 .mission h1 {
-    font-size: 2.5rem;
+    text-align: left;
+    font-size: 1.5rem;
     margin-bottom: 15px;
 }
+
 
 .mission .lead {
     font-size: 1.2rem;
@@ -19,8 +21,10 @@
 }
 
 .about-section h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 30px;
+    text-align: left;
+    margin-left: 1px;
 }
 
 .card p {
@@ -34,9 +38,14 @@
     color: #333;
 }
 
-.newsletter-section {
+.newsletter_section {
     margin-top: 50px;
     padding-top: 30px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+
 }
 
 .alert-danger {
@@ -46,9 +55,32 @@
     font-size: 1rem;
 }
 
+/* Newsletter Section */
 .newsletter-section {
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
     padding: 20px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     text-align: center;
+    margin-top: 50px;
+}
+
+.newsletter-section h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.newsletter-section p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.emailid {
+    font-size: 0.9rem;
+}
+
+.form-control {
+    margin: 1rem auto;
+    padding: 10px;
 }

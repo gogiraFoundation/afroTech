@@ -1,42 +1,153 @@
-/* contact styling */
-.contact_wrap form div {
-    margin-bottom: 15px;
+/* General Styling */
+:root {
+    --primary-font: 'Raleway', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --primary-color: #212529;
+    --secondary-color: #0056b3;
+    --error-color: #dc3545;
+    --success-bg: #d4edda;
+    --error-bg: #f8d7da;
+    --light-bg: #f8f8f8;
+    --input-border: #ccc;
+    --input-focus-bg: #ffffff;
+    --btn-bg: #04AA6D;
+    --btn-hover-bg: #004085;
+    --social-icon-size: 20px;
+    --form-width: 100%;
 }
 
-.contact_wrap label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+/* Wrapper */
+.contact_wrap {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--primary-font);
+    margin: 0 auto;
+    padding: 20px;
 }
+
+/* Form Section */
+.contact-form {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--error-color);
+    border-radius: 3px;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 1px 1px var(--primary-color, 0.1);
+}
+
+.contact-form p {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+/* Input Fields */
+.field label {
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    margin-right: 33rem;
+}
+
 
 .contact_wrap input,
 .contact_wrap textarea {
     width: 100%;
     padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--input-border);
     border-radius: 5px;
-    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: var(--light-bg);
+    transition: background-color 0.3s ease, border 0.3s ease;
 }
 
+.contact_wrap input:focus,
+.contact_wrap textarea:focus {
+    background-color: var(--input-focus-bg);
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+/* Buttons */
 .contact_wrap button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #0056b3;
+    padding: 7px 14px;
+    border-radius: 3px;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contact_wrap button:hover {
-    background-color: #004085;
+    background-color: var(--btn-hover-bg);
+    transform: scale(1.05);
+    box-shadow: 1px 2px var(--btn-bg);
 }
 
-.error {
-    color: #dc3545;
-    font-size: 0.9rem;
+/* Social Media Links */
+.social-media {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: var(--social-icon-size);
+}
+
+.social-media h3 {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.social-media p {
+    font-size: 0.7rem;
+}
+
+.social-media span {
+    font-size: 0.7rem;
+    margin-right: 10px;
+}
+
+
+
+.social-media a {
+    text-decoration: none;
+    color: white;
+    font-size: var(--social-icon-size);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+/* Messages Section */
+.messages {
+    margin-top: 20px;
 }
 
 .messages p {
-    margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
     font-weight: bold;
@@ -44,12 +155,57 @@
 
 .messages .success {
     color: #155724;
-    background: #d4edda;
+    background: var(--success-bg);
     border: 1px solid #c3e6cb;
 }
 
 .messages .error {
     color: #721c24;
-    background: #f8d7da;
+    background: var(--error-bg);
     border: 1px solid #f5c6cb;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .field label {
+        font-size: 0.8rem;
+    }
+
+    .contact_wrap input,
+    .contact_wrap textarea {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .contact_wrap button {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+
+    .social-media {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-links {
+        padding-left: 15px;
+        background-color: var(--primary-color);
+        margin: 0 20px;
+        border-radius: 3px;
+    }
+
+    .social-links a {
+        margin: 0 auto;
+        font-size: 0.7rem;
+        padding: 15px;
+    }
+
+    .fa {
+        padding: 0;
+    }
 }

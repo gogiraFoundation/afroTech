@@ -2,7 +2,6 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/contact_style.css' %}">
 
-
 {% block title %}
 <title>Contact - AfroTech</title>
 {% endblock %}
@@ -10,27 +9,40 @@
 {% block content %}
 <div class="index_container">
     <section class="contact_wrap">
-        <div>
+        <div class="contact-form">
             <h2>Contact Us</h2>
             <p>We'd love to hear from you! Please fill out the form below to get in touch with us.</p>
 
             <!-- Start of Django Form -->
             <form method="post" action="{% url 'afro_engine:contact' %}">
                 {% csrf_token %}
-                
-                {% for field in form %}
-                    <div class="form-group">
-                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                        {{ field }}
-                        {% if field.errors %}
-                            <p class="error">{{ field.errors|striptags }}</p>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-                
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="field" tabindex="1">
+                    <label for="id_name">Name
+                    </label>
+                    <input id="id_name" name="username" type="text" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="field" tabindex="2">
+                    <label for="id_email">Email</label>
+                    <input id="id_email" name="email" type="email" placeholder="email@domain.com" required>
+                </div>
+                <div class="field" tabindex="3">
+                    <label for="id_message">Message</label>
+                    <textarea id="id_message" name="message" placeholder="Type here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
             <!-- End of Django Form -->
+
+            <!-- Social Media Links -->
+            <div class="social-media text-center mt-4">
+                <h3>Stay Connected</h3>
+                <p>Follow us on socials:</p>
+                <div class="social-links d-flex justify-content-center">
+                    <a href="#" class="fa fa-twitter" target="_blank"  aria-label="Twitter"></a>
+                    <a href="#" class="fa fa-linkedin" target="_blank" aria-label="LinkedIn"></a>
+                    <a href="#" class="fa fa-instagram" target="_blank" aria-label="Instagram"></a>
+                </div>
+            </div>
 
             <!-- Display Messages -->
             {% if messages %}
